@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  cursor: default;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #222;
+  height: 100vh;
+  width: 100vw;
+}
+::selection {
+  color: maroon;
+  background-color: rgb(243, 141, 94);
+}
+* img::selection,
+* link::selection {
+  background-color: transparent;
+}
+img:hover:where(:not(.image img)) {
+  position: absolute;
+  /* background-color: black; */
+  transform: scale(1.5);
+  border-radius: 50%;
+  z-index: 999;
+}
+.image img:hover {
+  transform: scale(1.2);
+  background-color: white;
+}
+.wrapper {
+  height: fit-content;
+  width: fit-content;
+  background-color: wheat;
+  padding: 5px;
+  margin: 5px;
+}
+.profile-card {
+  height: 25%;
+  background-color: rgba(244, 165, 96, 0.452);
+  border-bottom: 2px solid black;
+}
+.profile {
+  /* background-color: green; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.profile img {
+  width: 150px;
+  border-radius: 50%;
+  padding: 5px;
+  /* background-color: red; */
+}
+.detail {
+  /* background: blue; */
+  position: relative;
+  color: brown;
+  padding: 10px;
+  margin: 0px;
+}
+.profile .detail .personal {
+  /* background-color: red; */
+  display: flex;
+  align-items: right;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  margin: 0px;
+}
+.detail span {
+  /* background-color: black; */
+  position: relative;
+  padding-left: 5px;
+  font-size: 2em;
+  font-weight: 700;
+}
+.detail p {
+  /* background-color: wheat; */
+  position: relative;
+  margin-top: 8px;
+  padding-left: 15px;
+  font-size: 1.2em;
+  font-weight: 400;
+  width: fit-content;
+}
+.profile-card .tech {
+  /* position: absolute; */
+  /* background-color: forestgreen; */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+}
+.profile-card .language {
+  position: relative;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(auto-fill, 130px);
+  justify-content: space-evenly;
+  width: 100%;
+}
+.language > * {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 249, 249, 0.301);
+  color: tomato;
+  border-radius: 25px;
+  height: 50px;
+  width: 100%;
+  margin: 5px;
+}
+.language .resume,
+.resume img,
+.resume span {
+  cursor: pointer;
+}
+.language .skill {
+  background-color: wheat;
+  color: brown;
+  font-size: small;
+  text-decoration: underline;
+  font-weight: 700;
+}
+.language span {
+  position: relative;
+  padding-left: 5px;
+  font-size: 1.3em;
+  font-weight: 700;
+}
+.language img {
+  /* background-color: red; */
+  position: relative;
+  border-radius: 0;
+  height: 80%;
+  width: 30%;
+  padding: 5px;
+}
+.profile-card .description {
+  height: calc(50%-250px);
+  font-size: medium;
+  font-weight: 500;
+  padding: 20px;
+  color: brown;
+  background-color: rgba(244, 165, 96, 0.452);
+}
+.links {
+  /* background-color: green; */
+  text-align: center;
+  padding-top: 5px;
+}
+.links a {
+  /* background-color: blue; */
+  text-decoration: none;
+}
+.links img {
+  /* background-color: red; */
+  position: relative;
+  border-radius: 0;
+  height: 40px;
+  margin-left: 25px;
+  margin-right: 25px;
+  padding: 2px;
+  border-radius: 50%;
+  transition-duration: 0.5s;
+  transition-property: transform;
+  z-index: 999;
+  cursor: pointer;
+}
+.links :hover {
+  /* background-color: wheat; */
+  transform: scale(1.3);
+}
