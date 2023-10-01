@@ -20,7 +20,8 @@ body {
   background-color: rgb(243, 141, 94);
 }
 * img::selection,
-* link::selection {
+* .links a::selection,
+.language a .resume {
   background-color: transparent;
 }
 img:hover:where(:not(.image img)) {
@@ -29,10 +30,6 @@ img:hover:where(:not(.image img)) {
   transform: scale(1.5);
   border-radius: 50%;
   z-index: 999;
-}
-.image img:hover {
-  transform: scale(1.2);
-  background-color: white;
 }
 .wrapper {
   height: fit-content;
@@ -54,10 +51,16 @@ img:hover:where(:not(.image img)) {
   flex-direction: row;
 }
 .profile img {
-  width: 150px;
+  width: 165px;
   border-radius: 50%;
   padding: 5px;
+  transition-duration: 0.5s;
+  transition-property: transform;
   /* background-color: red; */
+}
+.image img:hover {
+  transform: scale(1.2);
+  background-color: wheat;
 }
 .detail {
   /* background: blue; */
@@ -109,7 +112,8 @@ img:hover:where(:not(.image img)) {
   justify-content: space-evenly;
   width: 100%;
 }
-.language > * {
+.language > *,
+.language a .resume {
   position: relative;
   display: flex;
   align-items: center;
@@ -120,11 +124,14 @@ img:hover:where(:not(.image img)) {
   height: 50px;
   width: 100%;
   margin: 5px;
+  text-decoration: none;
 }
-.language .resume,
-.resume img,
-.resume span {
+.language a .resume > * {
   cursor: pointer;
+}
+.language a :hover {
+  text-decoration: underline;
+  color: blue;
 }
 .language .skill {
   background-color: wheat;
@@ -156,6 +163,9 @@ img:hover:where(:not(.image img)) {
   background-color: rgba(244, 165, 96, 0.452);
 }
 .links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   /* background-color: green; */
   text-align: center;
   padding-top: 5px;
@@ -163,6 +173,14 @@ img:hover:where(:not(.image img)) {
 .links a {
   /* background-color: blue; */
   text-decoration: none;
+}
+.links span {
+  text-align: center;
+  color: brown;
+  font-size: 12px;
+  text-decoration: underline;
+  font-weight: 500;
+  /* background-color: navy; */
 }
 .links img {
   /* background-color: red; */
@@ -178,7 +196,7 @@ img:hover:where(:not(.image img)) {
   z-index: 999;
   cursor: pointer;
 }
-.links :hover {
+.links img:hover {
   /* background-color: wheat; */
   transform: scale(1.3);
 }
