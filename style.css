@@ -38,13 +38,10 @@ img:hover:where(:not(.image img)) {
   padding: 5px;
   margin: 5px;
 }
-.profile-card {
-  height: 25%;
-  background-color: rgba(244, 165, 96, 0.452);
-  border-bottom: 2px solid black;
-}
 .profile {
   /* background-color: green; */
+  background-color: rgba(244, 165, 96, 0.452);
+  border-bottom: 2px solid black;
   display: flex;
   align-items: center;
   justify-content: center;
