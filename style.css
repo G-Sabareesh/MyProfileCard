@@ -12,6 +12,7 @@ body {
   justify-content: center;
   flex-direction: column;
   background-color: #222;
+  padding: 2px;
   height: 100vh;
   width: 100vw;
 }
@@ -21,25 +22,27 @@ body {
 }
 * img::selection,
 * .links a::selection,
-.language a .resume {
+.language a .resume::selection {
   background-color: transparent;
 }
 img:hover:where(:not(.image img)) {
   position: absolute;
-  /* background-color: black; */
   transform: scale(1.5);
   border-radius: 50%;
   z-index: 999;
 }
 .wrapper {
+  border: 2px solid white;
+  border-radius: 5px;
+}
+.wrapper1 {
   height: fit-content;
   width: fit-content;
   background-color: wheat;
-  padding: 5px;
   margin: 5px;
+  border-radius: 5px;
 }
 .profile {
-  /* background-color: green; */
   background-color: rgba(244, 165, 96, 0.452);
   border-bottom: 2px solid black;
   display: flex;
@@ -50,24 +53,32 @@ img:hover:where(:not(.image img)) {
 .profile img {
   width: 165px;
   border-radius: 50%;
-  padding: 5px;
-  transition-duration: 0.5s;
-  transition-property: transform;
-  /* background-color: red; */
+  padding: 2px;
+  background-color: none;
+  transition: transform 0.5s;
+}
+@keyframes spin {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    scale: 1.1;
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
 }
 .image img:hover {
-  transform: scale(1.2);
-  background-color: wheat;
+  cursor: grabbing;
+  animation: spin 2s;
 }
 .detail {
-  /* background: blue; */
   position: relative;
   color: brown;
   padding: 10px;
   margin: 0px;
 }
 .profile .detail .personal {
-  /* background-color: red; */
   display: flex;
   align-items: right;
   justify-content: center;
@@ -76,14 +87,12 @@ img:hover:where(:not(.image img)) {
   margin: 0px;
 }
 .detail span {
-  /* background-color: black; */
   position: relative;
   padding-left: 5px;
   font-size: 2em;
   font-weight: 700;
 }
 .detail p {
-  /* background-color: wheat; */
   position: relative;
   margin-top: 8px;
   padding-left: 15px;
@@ -92,8 +101,6 @@ img:hover:where(:not(.image img)) {
   width: fit-content;
 }
 .profile-card .tech {
-  /* position: absolute; */
-  /* background-color: forestgreen; */
   position: relative;
   display: flex;
   align-items: center;
@@ -123,7 +130,8 @@ img:hover:where(:not(.image img)) {
   margin: 5px;
   text-decoration: none;
 }
-.language a .resume > * {
+.language a .resume {
+  background-color: transparent;
   cursor: pointer;
 }
 .language a :hover {
@@ -144,7 +152,6 @@ img:hover:where(:not(.image img)) {
   font-weight: 700;
 }
 .language img {
-  /* background-color: red; */
   position: relative;
   border-radius: 0;
   height: 80%;
@@ -163,12 +170,10 @@ img:hover:where(:not(.image img)) {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-color: green; */
   text-align: center;
   padding-top: 5px;
 }
 .links a {
-  /* background-color: blue; */
   text-decoration: none;
 }
 .links span {
@@ -177,10 +182,8 @@ img:hover:where(:not(.image img)) {
   font-size: 12px;
   text-decoration: underline;
   font-weight: 500;
-  /* background-color: navy; */
 }
 .links img {
-  /* background-color: red; */
   position: relative;
   border-radius: 0;
   height: 40px;
@@ -194,6 +197,5 @@ img:hover:where(:not(.image img)) {
   cursor: pointer;
 }
 .links img:hover {
-  /* background-color: wheat; */
   transform: scale(1.3);
 }
